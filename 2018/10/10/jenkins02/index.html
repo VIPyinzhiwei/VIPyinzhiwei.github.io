@@ -81,13 +81,13 @@
 
 
 
-<meta name="description" content="开始搭建 android 项目自动化集成前需要先在 Jenkins 中做一些配置相关，并安装相关的插件。 Jenkins 配置相关android sdk 环境变量配置 java jdk &amp;amp; gradle 环境配置 Jenkins 插件清单 Gradle Plugin   在项目配置界面里构建栏新增了一个选项，”Invoke Gradle script”      Git Plugin">
+<meta name="description" content="开始搭建 Android 项目自动化集成前需要先在 Jenkins 中做一些配置相关，并安装相关的插件。 Jenkins 配置相关Android SDK 环境变量配置 Java JDK &amp;amp; Gradle 环境配置 Jenkins 插件清单 Gradle Plugin   在项目配置界面里构建栏新增了一个选项，”Invoke Gradle script”      Git Plugin">
 <meta name="keywords" content="vipyinzhiwei">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jenkins 项目实践篇">
 <meta property="og:url" content="http://vipyinzhiwei.com/2018/10/10/jenkins02/index.html">
 <meta property="og:site_name" content="殷志威的博客">
-<meta property="og:description" content="开始搭建 android 项目自动化集成前需要先在 Jenkins 中做一些配置相关，并安装相关的插件。 Jenkins 配置相关android sdk 环境变量配置 java jdk &amp;amp; gradle 环境配置 Jenkins 插件清单 Gradle Plugin   在项目配置界面里构建栏新增了一个选项，”Invoke Gradle script”      Git Plugin">
+<meta property="og:description" content="开始搭建 Android 项目自动化集成前需要先在 Jenkins 中做一些配置相关，并安装相关的插件。 Jenkins 配置相关Android SDK 环境变量配置 Java JDK &amp;amp; Gradle 环境配置 Jenkins 插件清单 Gradle Plugin   在项目配置界面里构建栏新增了一个选项，”Invoke Gradle script”      Git Plugin">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://vipyinzhiwei.com/2018/10/10/jenkins02/j01.jpg">
 <meta property="og:image" content="http://vipyinzhiwei.com/2018/10/10/jenkins02/j02.jpg">
@@ -136,10 +136,10 @@
 <meta property="og:image" content="http://vipyinzhiwei.com/2018/10/10/jenkins02/j45.jpg">
 <meta property="og:image" content="http://vipyinzhiwei.com/2018/10/10/jenkins02/j46.jpg">
 <meta property="og:image" content="http://vipyinzhiwei.com/2018/10/10/jenkins02/j47.jpg">
-<meta property="og:updated_time" content="2020-04-01T07:47:38.549Z">
+<meta property="og:updated_time" content="2020-04-25T01:29:29.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jenkins 项目实践篇">
-<meta name="twitter:description" content="开始搭建 android 项目自动化集成前需要先在 Jenkins 中做一些配置相关，并安装相关的插件。 Jenkins 配置相关android sdk 环境变量配置 java jdk &amp;amp; gradle 环境配置 Jenkins 插件清单 Gradle Plugin   在项目配置界面里构建栏新增了一个选项，”Invoke Gradle script”      Git Plugin">
+<meta name="twitter:description" content="开始搭建 Android 项目自动化集成前需要先在 Jenkins 中做一些配置相关，并安装相关的插件。 Jenkins 配置相关Android SDK 环境变量配置 Java JDK &amp;amp; Gradle 环境配置 Jenkins 插件清单 Gradle Plugin   在项目配置界面里构建栏新增了一个选项，”Invoke Gradle script”      Git Plugin">
 <meta name="twitter:image" content="http://vipyinzhiwei.com/2018/10/10/jenkins02/j01.jpg">
 
 
@@ -392,9 +392,9 @@
       
 
       
-        <p>开始搭建 android 项目自动化集成前需要先在 Jenkins 中做一些配置相关，并安装相关的插件。</p>
-<h2 id="Jenkins-配置相关"><a href="#Jenkins-配置相关" class="headerlink" title="Jenkins 配置相关"></a>Jenkins 配置相关</h2><p>android sdk 环境变量配置<br><img src="j01.jpg" alt=""></p>
-<p>java jdk &amp; gradle 环境配置<br><img src="j02.jpg" alt=""></p>
+        <p>开始搭建 Android 项目自动化集成前需要先在 Jenkins 中做一些配置相关，并安装相关的插件。</p>
+<h2 id="Jenkins-配置相关"><a href="#Jenkins-配置相关" class="headerlink" title="Jenkins 配置相关"></a>Jenkins 配置相关</h2><p>Android SDK 环境变量配置<br><img src="j01.jpg" alt=""></p>
+<p>Java JDK &amp; Gradle 环境配置<br><img src="j02.jpg" alt=""></p>
 <h2 id="Jenkins-插件清单"><a href="#Jenkins-插件清单" class="headerlink" title="Jenkins 插件清单"></a>Jenkins 插件清单</h2><ul>
 <li><p>Gradle Plugin</p>
 <p>  在项目配置界面里<strong>构建</strong>栏新增了一个选项，”Invoke Gradle script”<br>  <img src="j03.jpg" alt=""></p>
@@ -433,7 +433,7 @@
 <p>  在 <strong>构建后操作</strong>栏新增了一个选项，“Publish HTML reports”<br>  <img src="j19.jpg" alt=""></p>
 </li>
 </ul>
-<h2 id="搭建-android-项目自动化集成"><a href="#搭建-android-项目自动化集成" class="headerlink" title="搭建 android 项目自动化集成"></a>搭建 android 项目自动化集成</h2><ol>
+<h2 id="搭建-Android-项目自动化集成"><a href="#搭建-Android-项目自动化集成" class="headerlink" title="搭建 Android 项目自动化集成"></a>搭建 Android 项目自动化集成</h2><ol>
 <li><p>首先将远程仓库的项目源码拉到本地，需要做如下配置<br><img src="j20.jpg" alt=""><br><img src="j21.jpg" alt=""></p>
 <p> 其他暂不做任何配置，保持默认配置就可以了。</p>
 </li>
@@ -441,7 +441,7 @@
 <p> 点击蓝色圈圈按钮后，可以看到控制台输出信息<br> <img src="j23.jpg" alt=""></p>
 <p> 在本地工作空间中，可以看到源码已经拉下来了。路径 “/Users/apple/.jenkins/workspace/vipyinzhiwei-android”。</p>
 </li>
-<li><p>接下来需要配置一个构建任务，实现在 jenkins 平台构建 android 项目，打包 apk 文件。</p>
+<li><p>接下来需要配置一个构建任务，实现在 Jenkins 平台构建 Android 项目，打包 apk 文件。</p>
 <p> 首先在打包 apk 前需要编译项目，<br> <img src="j24.jpg" alt=""></p>
 <p> 接着将编译后生成的 apk 文件归档，以便查看，<br> <img src="j25.jpg" alt=""></p>
 <p> 配置好保存后，点击立即构建，构建成功后可以看到生成的 apk 文件，点击可以直接下载 apk 。<br> <img src="j26.jpg" alt=""></p>
@@ -703,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins-配置相关"><span class="nav-number">1.</span> <span class="nav-text">Jenkins 配置相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins-插件清单"><span class="nav-number">2.</span> <span class="nav-text">Jenkins 插件清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建-android-项目自动化集成"><span class="nav-number">3.</span> <span class="nav-text">搭建 android 项目自动化集成</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins-配置相关"><span class="nav-number">1.</span> <span class="nav-text">Jenkins 配置相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins-插件清单"><span class="nav-number">2.</span> <span class="nav-text">Jenkins 插件清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建-Android-项目自动化集成"><span class="nav-number">3.</span> <span class="nav-text">搭建 Android 项目自动化集成</span></a></li></ol></div>
             
 
           </div>
