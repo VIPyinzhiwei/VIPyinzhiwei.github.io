@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="94QMxfRWo9SAf1cgqKYvR-A_0DhyCGPV-eYoktQl0co" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vipyinzhiwei" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="殷志威的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一转眼，2017 年已经过去了，在敲代码和改 Bug 中，又搬了一年砖，写点这一年的总结。  工作相关春节过后，加入了一家创业公司歪脸网，在这一年中主要工作是参与「 歪脸助手 、再歪一点 、歪脸侠 」Android 端的开发和维护。 再歪一点刚进公司负责的一个旧的项目，项目代码非常臃肿，在进行维护与二次开发过程中进行了一些优化。对于性能优化方面有了一定的提升。 歪脸助手第二个参与的项目，负责">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的 2017 年个人总结">
+<meta property="og:url" content="http://vipyinzhiwei.com/2018/01/01/2017-last/index.html">
+<meta property="og:site_name" content="殷志威的博客">
+<meta property="og:description" content="一转眼，2017 年已经过去了，在敲代码和改 Bug 中，又搬了一年砖，写点这一年的总结。  工作相关春节过后，加入了一家创业公司歪脸网，在这一年中主要工作是参与「 歪脸助手 、再歪一点 、歪脸侠 」Android 端的开发和维护。 再歪一点刚进公司负责的一个旧的项目，项目代码非常臃肿，在进行维护与二次开发过程中进行了一些优化。对于性能优化方面有了一定的提升。 歪脸助手第二个参与的项目，负责">
+<meta property="og:locale">
+<meta property="og:image" content="http://vipyinzhiwei.com/2018/01/01/2017-last/cover.jpeg">
+<meta property="article:published_time" content="2018-01-01T12:50:35.000Z">
+<meta property="article:modified_time" content="2025-05-11T12:16:49.298Z">
+<meta property="article:author" content="vipyinzhiwei">
+<meta property="article:tag" content="vipyinzhiwei">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://vipyinzhiwei.com/2018/01/01/2017-last/cover.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://vipyinzhiwei.com/2018/01/01/2017-last/"/>
+
+
+
+
+
+  <title>我的 2017 年个人总结 | 殷志威的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d9df1ed4dad72cbd177edacb886d0b1d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">殷志威的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Android 开发工程师</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friendslinks">
+          <a href="/friendslinks" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vipyinzhiwei.com/2018/01/01/2017-last/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="殷志威的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">我的 2017 年个人总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-01T20:50:35+08:00">
+                2018-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column"  style="width: 100%;"><img src="cover.jpeg"/></div></div><div class="group-picture-row"></div></div></div>
+
+
+<p>一转眼，2017 年已经过去了，在敲代码和改 Bug 中，又搬了一年砖，写点这一年的总结。 </p>
+<h3 id="工作相关"><a href="#工作相关" class="headerlink" title="工作相关"></a><strong>工作相关</strong></h3><p>春节过后，加入了一家创业公司歪脸网，在这一年中主要工作是参与「 歪脸助手 、再歪一点 、歪脸侠 」Android 端的开发和维护。</p>
+<p><strong>再歪一点</strong>刚进公司负责的一个旧的项目，项目代码非常臃肿，在进行维护与二次开发过程中进行了一些优化。对于性能优化方面有了一定的提升。</p>
+<p><strong>歪脸助手</strong>第二个参与的项目，负责其中一个模块的开发，整个项目开发了 4  个月周期，所有功能基本都已完成，但由于产品定位不明确等问题，放弃了上线，开发过程中熟悉了自定义控件等一些相关技术。</p>
+<p><strong>歪脸侠</strong>第 3 期版本开始参与的一个新的项目，项目里引用的大量第三方开源库较多，基本上都能熟练使用。欠缺的是对于源码方面的了解还不够深入，只知其然而不知其所以然。后面需要更多时间去阅读源码，希望在其中能吸收到一些好的设计与好的代码写法。另外在版本不断的迭代过程中，解决问题能力有了较大的提升。</p>
+<h3 id="学习相关"><a href="#学习相关" class="headerlink" title="学习相关"></a><strong>学习相关</strong></h3><p>1、git 版本管理，熟悉使用命令行做代码管理；</p>
+<p>2、报名了一些线上写作课程，对于写作方面有了一些认识；</p>
+<p>3、英语语法方面有了进一步的提升，能够看懂一些简单结构的语句；</p>
+<p>4、掌握了基础的 MarkDown 语法进行文档写作，对文案排版方面有了一定的提升；</p>
+<p>5、搭建了个人博客，够买了域名，并开通了个人微信公众号，了解了一些运营方面的知识；</p>
+<p>6、大量的阅读，思维与认知方面有了很大的变化。主要阅读来源：公众号( stormzhang、MacTalk、小道消息、caoz 的梦呓、Spenser )、知识星球、得到、知乎、36 氪、简书、腾讯新闻等；</p>
+<p>7、熟练一些常用的效率工具，时间管理「 aTimeLogger2 」，专注工作「 Forest 」 ，思维导图「 XMind 」，写日记「 DayOne 」，知识管理「 印象笔记 」，事务清单「 奇妙清单 」，记账理财「 口袋记账 」。</p>
+<h3 id="生活相关"><a href="#生活相关" class="headerlink" title="生活相关"></a><strong>生活相关</strong></h3><p>1、年底在武汉买了一套房，完成了人生中的一件大事。同时也意味着还贷生活提前到来了，也许有点压力的人生才算完整吧~</p>
+<p>2、年初 3 月份和女朋友云南的一次旅游，很有意义的一件事。听过古城最朴质的倒鼓音乐声，见过泸沽湖清澈见底的湖水，了解过一些少数名族文化，去过风花雪月的洱海等。世界那么大，如果有机会，尽可能的多出去走走，也许能发现属于自己不一样的天空。</p>
+<p>3、今年又学做了几道新菜，爆炒小龙虾、甲鱼汤、清蒸河虾、酸辣毛豆角，清蒸鲈鱼、玉米胡萝卜排骨汤等。</p>
+<h3 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a><strong>感悟</strong></h3><p>1、<strong>知识付费</strong></p>
+<p>在经济能力允许的情况下，只要能提高效率，节约时间，能解决问题，就花钱。</p>
+<p>2、<strong>思考</strong></p>
+<p>在忙也要留给自己一些思考的时间，别用行动上的勤奋去代替思维上的懒惰。</p>
+<p>3、<strong>时间</strong></p>
+<p>珍惜别人的时间，也是对别人的一种尊重。不同的人时间成本不一样，也许你还没到别人那个阶层，现在还无法体会到，浪费别人的时间也许就是在谋财害命。</p>
+<p>4、<strong>社交</strong></p>
+<p>通常我们建立且维持人脉最常见的方式是保持联系不断的跟人交流， 但随着数量的增加，每增加多一个熟人情感联系，就要投入更多的时间精力成本，而随着数量的增加，10 个 20 个或许勉强还能维持的住，再往上如果是 200 个呢？很就有天花板瓶颈了。于是今年决定放弃了所有的社交，把几乎所有的时间和精力都投入到了写作这件事上，希望能锻炼下自己文字的表达能力，并积累一点影响力，同时也希望通过写作传播一点有价值的东西，通过这些知识点或互动反馈等建立情感联系，也让更多的人主动去认识我，且不给别人的时间成本造成负担。</p>
+<p>5、<strong>专心做好一件事</strong></p>
+<p>有时候我们想着同时做好很多件事，做事很浮躁，到最后都没有一件事做成的，越是焦虑，越是要沉下心来，专心做好一件事，当一件事做完后再去做另外一件事，就会缓解了一部分焦虑，焦虑也就越来越少了。</p>
+<p>6、<strong>如何高效学习</strong></p>
+<p>简单举个例子拿学习英语来说，其实死记硬背 8 个小时一般都不如间隔的去学习 4 个小时。比如每天学习半个小时英语，学习 8 天时间。原因是大脑在你学习间隔期能够自动复习学到的信息。所以提前规划好每天，学习一点点，不仅花费的时间少，而且学习时更加高效。</p>
+<p>7、<strong>如何更好的去坚持学习？</strong></p>
+<p>最好的学习方法是在实践中学习 。一开始先要有个目标，然后针对这个目标去进行有针对性的学习。拿我今年自己做的一些事情来说，最初的目标是想在博客上写点有价值的东西分享出来，首先自己尝试搭建了个人博客，准备开始写点东西时根本就无法动手，感觉没什么可写，接着就在网上搜了下怎么写博客啊，如何提升写作技巧啊等方面的资料，最后决定了报名一个线上写作课，</p>
+<p>在学习了一些写作相关基础知识后，于是带着目标的进行大量的阅读思考等，看看别人怎么写的，有哪些写的好的文章或句子值得自己学习或思考的，收集后通过知识管理工具整理下来等，最后当你回头再去写点东西时，你会发现自己能写出来有价值的东西比一开始的时候多了很多。在这些一个个小目标学习过程当中，当你每学一点新的东西，有了一个正面的反馈，你会获得一点点成就感，这样才会更容易的坚持下去。</p>
+<h3 id="明年计划"><a href="#明年计划" class="headerlink" title="明年计划"></a><strong>明年计划</strong></h3><p>1、<strong>技术</strong></p>
+<p>对 Java 语言更进一步的深入学习，另外学点 Python、HTML5 ，掌握一些最基础的开发工作。</p>
+<p>2、<strong>投资自己</strong></p>
+<p>花时间花钱大量的阅读，写作、实践，让自己从技术、写作、认知、思维等各方面不断提升。</p>
+<p>3、<strong>英语</strong></p>
+<p>希望通过明年的坚持，更早的脱离国内的一些翻译过的技术文档资料，自己能够看懂一些英文版技术文档等，第一时间获取一些最前沿的技术知识。</p>
+<p>4、<strong>结婚</strong></p>
+<p>为人生当中的第一件大事提前做好一些准备。</p>
+<p>5、<strong>努力赚钱</strong></p>
+<p>钱赚多了，很多事情就变了。</p>
+<p>最后，祝大家新年快乐！</p>
+<hr>
+<p>题图：<br>2017.2.28，云南丽江-泸沽湖拍摄</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
+    <div>微信扫描二维码，关注我的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/27/jenkins01/" rel="prev" title="Jenkins 入门篇">
+                Jenkins 入门篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7Carchive">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/vipyinzhiwei" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/vipyinzhiwei" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/vipyinzhiwei" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/vipyinzhiwei" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/vipyinzhiwei" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:vipyinzhiwei@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E7%9B%B8%E5%85%B3"><span class="nav-number">1.</span> <span class="nav-text">工作相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3"><span class="nav-number">2.</span> <span class="nav-text">学习相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%B4%BB%E7%9B%B8%E5%85%B3"><span class="nav-number">3.</span> <span class="nav-text">生活相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%9F%E6%82%9F"><span class="nav-number">4.</span> <span class="nav-text">感悟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%8E%E5%B9%B4%E8%AE%A1%E5%88%92"><span class="nav-number">5.</span> <span class="nav-text">明年计划</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">vipyinzhiwei</span>
+
+  
+  <a href="https://beian.miit.gov.cn/#/Integrated/index/">鄂ICP备2022016158号-1</a>
+  <span class="with-love">
+    <i><img src="/images/police.png" /></i>
+  </span>
+  <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011502001550">鄂公网安备 42011502001550号</a>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

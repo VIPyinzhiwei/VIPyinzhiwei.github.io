@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="94QMxfRWo9SAf1cgqKYvR-A_0DhyCGPV-eYoktQl0co" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vipyinzhiwei" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="殷志威的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="开始搭建 Android 项目自动化集成前需要先在 Jenkins 中做一些配置相关，并安装相关的插件。 Jenkins 配置相关Android SDK 环境变量配置 Java JDK &amp; Gradle 环境配置 Jenkins 插件清单 Gradle Plugin   在项目配置界面里构建栏新增了一个选项，”Invoke Gradle script”    Git Plugin   新建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jenkins 项目实践篇">
+<meta property="og:url" content="http://vipyinzhiwei.com/2018/10/10/jenkins02/index.html">
+<meta property="og:site_name" content="殷志威的博客">
+<meta property="og:description" content="开始搭建 Android 项目自动化集成前需要先在 Jenkins 中做一些配置相关，并安装相关的插件。 Jenkins 配置相关Android SDK 环境变量配置 Java JDK &amp; Gradle 环境配置 Jenkins 插件清单 Gradle Plugin   在项目配置界面里构建栏新增了一个选项，”Invoke Gradle script”    Git Plugin   新建">
+<meta property="og:locale">
+<meta property="og:image" content="http://vipyinzhiwei.com/j01.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j02.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j03.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j04.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j05.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j06.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j07.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j08.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j09.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j10.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j11.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j12.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j13.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j14.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j15.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j16.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j17.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j18.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j19.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j20.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j21.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j22.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j23.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j24.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j25.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j26.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j27.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j28.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j29.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j30.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j31.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j32.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j33.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j34.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j35.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j36.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j37.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j38.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j39.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j40.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j41.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j42.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j43.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j44.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j45.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j46.jpg">
+<meta property="og:image" content="http://vipyinzhiwei.com/j47.jpg">
+<meta property="article:published_time" content="2018-10-10T09:56:35.000Z">
+<meta property="article:modified_time" content="2025-05-11T12:21:28.188Z">
+<meta property="article:author" content="vipyinzhiwei">
+<meta property="article:tag" content="vipyinzhiwei">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://vipyinzhiwei.com/j01.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://vipyinzhiwei.com/2018/10/10/jenkins02/"/>
+
+
+
+
+
+  <title>Jenkins 项目实践篇 | 殷志威的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d9df1ed4dad72cbd177edacb886d0b1d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">殷志威的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Android 开发工程师</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friendslinks">
+          <a href="/friendslinks" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://vipyinzhiwei.com/2018/10/10/jenkins02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="殷志威的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Jenkins 项目实践篇</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-10T17:56:35+08:00">
+                2018-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>开始搭建 Android 项目自动化集成前需要先在 Jenkins 中做一些配置相关，并安装相关的插件。</p>
+<h2 id="Jenkins-配置相关"><a href="#Jenkins-配置相关" class="headerlink" title="Jenkins 配置相关"></a>Jenkins 配置相关</h2><p>Android SDK 环境变量配置<br><img src="/j01.jpg"></p>
+<p>Java JDK &amp; Gradle 环境配置<br><img src="/j02.jpg"></p>
+<h2 id="Jenkins-插件清单"><a href="#Jenkins-插件清单" class="headerlink" title="Jenkins 插件清单"></a>Jenkins 插件清单</h2><ul>
+<li><p>Gradle Plugin</p>
+<p>  在项目配置界面里<strong>构建</strong>栏新增了一个选项，”Invoke Gradle script”<br>  <img src="/j03.jpg"></p>
+</li>
+<li><p>Git Plugin</p>
+<p>  新建任务界面新增了两个选项,”流水线”与”构建一个多配置任务”<br>  <img src="/j04.jpg"></p>
+<p>  项目配置-<strong>源码管理</strong>栏新增了一个选项，“Git”<br>  <img src="/j05.jpg"></p>
+<p>  在项目配置界面里<strong>构建</strong>栏新增了一个选项，”Set build status to “pending” on GitHub commit”<br>  <img src="/j06.jpg"></p>
+<p>  在项目配置界面里<strong>构建触发器</strong>栏新增了一个选项，”GitHub hook trigger for GITScm polling”<br>  <img src="/j07.jpg"></p>
+<p>  在项目配置界面里<strong>构建后操作</strong>栏新增了三个选项，”Set GitHub commit status (universal)”<br>  <img src="/j08.jpg"><br>  <img src="/j09.jpg"><br>  <img src="/j10.jpg"></p>
+</li>
+<li><p>Git Parameter</p>
+<p>  在 <strong>General-参数化构建过程</strong>栏新增了一个选项，“Git Parameter”<br>  <img src="/j11.jpg"></p>
+</li>
+<li><p>user build vars plugin</p>
+<p>  在 <strong>构建环境</strong>栏新增了一个选项，“Set jenkins user build variables”<br>  <img src="/j12.jpg"></p>
+</li>
+<li><p>build-name-setter</p>
+<p>  在 <strong>构建环境</strong>栏新增了一个选项，“Set Build Name”<br>  <img src="/j13.jpg"></p>
+</li>
+<li><p>description setter</p>
+<p>  在 <strong>构建后操作</strong>栏新增了一个选项，“Set build description”<br>  <img src="/j14.jpg"></p>
+</li>
+<li><p>Upload to pgyer</p>
+<p>  在 <strong>构建或构建后操作</strong>栏新增了两个选项，“Upload to pgyer with apiV1”<br>  <img src="/j15.jpg"><br>  <img src="/j16.jpg"></p>
+</li>
+<li><p>OWASP Markup Formatter</p>
+<p>  在<strong>全局安全配置</strong>界面新增了一个选项，“Safe HTML”，提供在“Build History 模块”中输出 html 样式。<br>  <img src="/j17.jpg"></p>
+</li>
+<li><p>360 FireLine</p>
+<p>  在 <strong>构建</strong>栏新增了一个选项，“Execute FireLine”<br>  <img src="/j18.jpg"></p>
+</li>
+<li><p>Publish HTML reports</p>
+<p>  在 <strong>构建后操作</strong>栏新增了一个选项，“Publish HTML reports”<br>  <img src="/j19.jpg"></p>
+</li>
+</ul>
+<h2 id="搭建-Android-项目自动化集成"><a href="#搭建-Android-项目自动化集成" class="headerlink" title="搭建 Android 项目自动化集成"></a>搭建 Android 项目自动化集成</h2><ol>
+<li><p>首先将远程仓库的项目源码拉到本地，需要做如下配置<br><img src="/j20.jpg"><br><img src="/j21.jpg"></p>
+<p> 其他暂不做任何配置，保持默认配置就可以了。</p>
+</li>
+<li><p>点击立即构建，稍后会看到一个蓝色圆圈输出显示<br> <img src="/j22.jpg"></p>
+<p> 点击蓝色圈圈按钮后，可以看到控制台输出信息<br> <img src="/j23.jpg"></p>
+<p> 在本地工作空间中，可以看到源码已经拉下来了。路径 “&#x2F;Users&#x2F;apple&#x2F;.jenkins&#x2F;workspace&#x2F;vipyinzhiwei-android”。</p>
+</li>
+<li><p>接下来需要配置一个构建任务，实现在 Jenkins 平台构建 Android 项目，打包 apk 文件。</p>
+<p> 首先在打包 apk 前需要编译项目，<br> <img src="/j24.jpg"></p>
+<p> 接着将编译后生成的 apk 文件归档，以便查看，<br> <img src="/j25.jpg"></p>
+<p> 配置好保存后，点击立即构建，构建成功后可以看到生成的 apk 文件，点击可以直接下载 apk 。<br> <img src="/j26.jpg"></p>
+</li>
+<li><p>再来进一步扩展，可以选择版本分支与需要构建的类型进行打包输出 apk。<br> <img src="/j27.jpg"><br> <img src="/j28.jpg"></p>
+<p> 另外需要对“Branches to build”作下修改，以便根据选中的分支或标签下拉源码。<br> <img src="/j29.jpg"></p>
+<p> 并且对“Tasks”作修改，以便根据选中的构建类型，进行编译打包。<br> <img src="/j30.jpg"></p>
+<p> 保存配置后，回到面板界面，点击立即构建按钮，可以看到如下图效果。<br> <img src="/j31.jpg"></p>
+</li>
+<li><p>扩展优化 Build History 模块显示，增加显示构建姓名、构建类型等。<br> <img src="/j32.jpg"></p>
+<p> 当前 Build History 模块显示图如下所示。<br> <img src="/j33.jpg"></p>
+<p> 优化后，Build History 模块显示图如下所示。<br> <img src="/j34.jpg"></p>
+</li>
+<li><p>扩展优化 Build History 模块显示,增加 apk 下载二维码显示。点击 二维码图片后跳转到apk下载界面。<br> 这里需要到 <a href="https://www.pgyer.com/">蒲公英</a> 官网注册账号，申请密钥后，填写到下图配置中。</p>
+<p> <img src="/j35.jpg"></p>
+<p> 优化后，Build History 模块显示图如下所示。(注意这里标记格式器必须支持 HTML 格式，才能显示出二维码图片)</p>
+<p> <img src="/j36.jpg"></p>
+</li>
+<li><p>进一步优化，将输出后的 apk 进行加固签名，并上传到 <a href="https://www.pgyer.com/">蒲公英</a> 返回 apk 下载链接二维码。</p>
+<p> 首选在<strong>构建</strong>栏，添加“执行 shell ”，代码如下。</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">Java环境变量，360加固宝包里面有提供，根据自己本机的地址填写。</span></span><br><span class="line">JAVA_HOME=&quot;/Users/apple/Applications/360jiagubao_mac/jiagu/java/bin/java&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">加固保环境变量，根据自己本机的地址填写。</span></span><br><span class="line">JIAGU_HOME=&quot;/Users/apple/Applications/360jiagubao_mac/jiagu&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">登录 360 所需要的账户名和密码</span></span><br><span class="line">USER=&quot;360加固宝账号&quot;</span><br><span class="line">PSSSWORD=&quot;360加固宝密码&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">签名相关信息，请替换为实际签名的信息</span></span><br><span class="line">alias=&quot;别名&quot;</span><br><span class="line">alias_password=&quot;别名密码&quot;</span><br><span class="line">keystore_password=&quot;钥匙密码&quot;</span><br><span class="line">keystore_path=&quot;签名钥匙路径&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">登录360</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">JAVA_HOME -jar <span class="variable">$JIAGU_HOME</span>/jiagu.jar -login <span class="variable">$USER</span> <span class="variable">$PSSSWORD</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">配置增强服务，可选项</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">JAVA_HOME -jar <span class="variable">$JIAGU_HOME</span>/jiagu.jar -config -x86 -crashlog</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">配置签名信息，用于加固完成后自动对 apk 重签名。</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">JAVA_HOME -jar <span class="variable">$JIAGU_HOME</span>/jiagu.jar -importsign <span class="variable">$keystore_path</span> <span class="variable">$keystore_password</span> <span class="variable">$alias</span> <span class="variable">$alias_password</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">加固并签名</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">JAVA_HOME -jar <span class="variable">$JIAGU_HOME</span>/jiagu.jar -jiagu <span class="variable">$&#123;WORKSPACE&#125;</span>/apps/**/build/outputs/apk/release/*_release.apk <span class="variable">$&#123;WORKSPACE&#125;</span>/apps/**/build/outputs/apk/release -autosign</span></span><br></pre></td></tr></table></figure>
+<p> 另外这里需要对“Upload to pgyer with apiV1”栏 file wildcard 进行修改，以便将加固并签名后的 apk 上传到蒲公英返回。</p>
+<p> <img src="/j37.jpg"></p>
+<p> 配置完成后，返回面板界面，立即构建，稍后可以在“控制台输出”看到如下图所示。</p>
+<p> <img src="/j38.jpg"></p>
+<p> 加固后的apk已经输出到指定路径了。</p>
+<p> <img src="/j39.jpg"></p>
+<p> 点击 二维码图片跳转到 apk 下载界面。<br> <img src="/j40.jpg"></p>
+<p> <img src="/j41.jpg"></p>
+</li>
+<li><p>进一步扩展，增加代码检测。（需要安装插件 360 FireLine）<br> <img src="/j42.jpg"><br> <img src="/j43.jpg"></p>
+<p> 配置好保存后，返回面板立即构建，构建成功后，在配置的路径文件夹，打开 360 FireLine 扫描生成的报告文件，“testReport.html”。在浏览器看到的效果图如下所示。</p>
+<p> <img src="/j44.jpg"></p>
+<p> 如果想在 Jenkins 中直接查看火线扫描结果。（需要安装一个新的插件 HTML Publisher plugin）<br> <img src="/j45.jpg"></p>
+<p> HTML directory to archive 项填写的路径就是“构建”栏中 Execute FireLine 结果报告路径.<br><br> Index page[s] 项填写的路径就是“构建”栏中 Execute FireLine 结果报告文件名.</p>
+<p> 配置好保存后，返回面板立即构建，构建成功后，看到如下图所示。</p>
+<p> <img src="/j46.jpg"></p>
+<p> 单击 “HTML Report”后，可以直接在 jinkens 查看结果报告。</p>
+<p> <img src="/j47.jpg"></p>
+</li>
+</ol>
+<hr>
+<p><strong>推荐阅读：</strong></p>
+<a href="/2018/09/27/jenkins01/" title="Jenkins 入门篇">Jenkins 入门篇</a>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt=" wechat" style="width: 200px; max-width: 100%;"/>
+    <div>微信扫描二维码，关注我的公众号</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/27/jenkins01/" rel="next" title="Jenkins 入门篇">
+                <i class="fa fa-chevron-left"></i> Jenkins 入门篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/15/paper01/" rel="prev" title="如何通过看电影高效地学习英语？">
+                如何通过看电影高效地学习英语？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7Carchive">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/vipyinzhiwei" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/vipyinzhiwei" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/vipyinzhiwei" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/vipyinzhiwei" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/vipyinzhiwei" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:vipyinzhiwei@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins-%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3"><span class="nav-number">1.</span> <span class="nav-text">Jenkins 配置相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins-%E6%8F%92%E4%BB%B6%E6%B8%85%E5%8D%95"><span class="nav-number">2.</span> <span class="nav-text">Jenkins 插件清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA-Android-%E9%A1%B9%E7%9B%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%9B%86%E6%88%90"><span class="nav-number">3.</span> <span class="nav-text">搭建 Android 项目自动化集成</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">vipyinzhiwei</span>
+
+  
+  <a href="https://beian.miit.gov.cn/#/Integrated/index/">鄂ICP备2022016158号-1</a>
+  <span class="with-love">
+    <i><img src="/images/police.png" /></i>
+  </span>
+  <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011502001550">鄂公网安备 42011502001550号</a>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
